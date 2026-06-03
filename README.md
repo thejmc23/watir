@@ -1,5 +1,5 @@
 # Summary
-Agrian Next Gen Web UI Tests.
+Web UI Tests.
 
 * Tests are in Cucumber formatting, more info on Cucumber (https://cucumber.io/)
 * Execution code is Ruby, using WATIR (Web Application Test In Ruby) to control browser actions. (https://watir.com/)
@@ -22,13 +22,12 @@ Agrian Next Gen Web UI Tests.
 
 #### Prerequisites
 * Ruby-based editor (Rubymine)
-* make sure you have an account for https://gems.agrian.com (contact Sujin)
 * make sure you have read/write access to github, and set up proper authorization
 * Ruby >= 2.6.2
 * RVM (Ruby Version Manager)
 * Bundler (gem)
 * git
-* Rust, required for agrian_units gem (https://www.rust-lang.org/tools/install)
+
 
 #### Run Commands 
  - first change directory to web_ui _`cd web_ui`_
@@ -37,7 +36,7 @@ Agrian Next Gen Web UI Tests.
 #### Gems info
 _should be installed, check with command `gem list`_
 
-* agrian_units
+
 * aws-sdk-s3
 * cucumber >= 3.1.0
 * curb
@@ -78,10 +77,6 @@ _should be installed, check with command `gem list`_
 The tests can be run locally by using cucumber
 example command _`cucumber features/grower.feature:19`_ where the number corresponds with the scenario line number
 
-or remotely on Jenkins (172.20.16.24:8080), you must be on the VPN, the command will show as **Build Now**
-
-see https://agrian.atlassian.net/wiki/spaces/QA/pages/107511953/WatirWorx+-+Jenkins+and+Local+Selenium+Grid for full details
-
 The tests can be run against Beta, Staging, or Live (some tests may be marked as incompatible with specific environments)
 
 #### Environment Rake task
@@ -102,19 +97,14 @@ users are available in folder _web_ui/support/users_, the login and raked user m
 
 The rake task writes *env_config.yml*, you can also edit *env_config.yml* if you want to add custom environment variables.
 
-#### Logging results to TestRail (https://agrian.testrail.net)
+#### Logging results to TestRail
 Testrail is the result repository for Test Engineering. (mainly in *NG_Automation_Nightly*)
 
 Test Result structure
 
 * Project
     + Test Run
-        - Test Case / Result
-
-Login info (main account)
-
-* username: test@agrian.com
-* password: Passw0rd
+        - Test Case / Resul
 
 
 ### Running the Tests
@@ -135,9 +125,3 @@ example `cucumber FEATURE=Growers_Test SITE=Beta features\grower.feature`
 * Create PR (ticket number is helpful to link in JIRA)
 * Merge to **test** branch
 * test is merged to **Master** monthly
-
-#### Who do I talk to? ###
-
-* Nathan Lange (nathan.lange@agrian.com)
-* Chris Nikolich (chris.nikolich@agrian.com)
-* Jose Camacho (jose.camacho@agrian.com)
